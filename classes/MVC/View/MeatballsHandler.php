@@ -15,10 +15,11 @@ class MeatballsHandler extends AbstractRequestHandler {
 
     protected function doExecute() {
         $select = "comments";
+        $selectDelete = "DeleteCommentHandler";
         $id = $this->session->get('id');
         $this->username = $id;
         $controller =  $this->session->get(Constants::CONTR_KEY_NAME);
-        $controller->getComments($this->username, $select);
+        $controller->getComments($this->username, $select, $selectDelete);
         $this->session->set(Constants::CONTR_KEY_NAME, $controller);
 
         return 'meatballs';

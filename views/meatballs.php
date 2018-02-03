@@ -22,8 +22,8 @@
 			<ul>
                             <li><a href="FirstPageHandler" class="dropbtn">Home</a></li>
                             <li><a href="CalendarPageHandler" class="dropbtn">Calendar</a></li>
-  				<li class="dropdown">
-    				<a class="dropbtn">Recipes</a>
+                            <li class="dropdown">
+                            <a class="dropbtn">Recipes</a>
     				<div class="dropdown-content">
                                     <a href="MeatballsHandler">Swedish Meatballs</a>
                                     <a href="PancakesHandler">Pancakes</a>
@@ -83,10 +83,10 @@
                 if($this->session->get('id') > 0) {
                 
                 echo "<form method='POST' action='SetCommentHandler'>
-                    <input type='hidden' name='username' value='id'>
-                    <textarea name='message'></textarea><br>
-                    <button value='commentSubmit' type='submit'>Comment</button>
-                </form>";
+                        <input type='hidden' name='username' value='id'>
+                        <textarea name='message'></textarea><br>
+                        <button value='commentSubmit' type='submit'>Comment</button>
+                    </form>";
                 }
                 else {
                     echo "Please login to comment!<br><br>";

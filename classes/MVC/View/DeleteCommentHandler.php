@@ -23,13 +23,14 @@ class DeleteCommentHandler extends AbstractRequestHandler {
     }
 
     protected function doExecute() {
-        $select = "comments";
+        $select = "comments_2";
+        $selectDelete = "DeleteCommentHandler";
         $controller =  $this->session->get(Constants::CONTR_KEY_NAME);
         $controller->deleteComment($this->cid, $select);
-        $controller->getComments($this->username, $select);
+        $controller->getComments($this->username, $select, $selectDelete);
         $this->session->set(Constants::CONTR_KEY_NAME, $controller);
         $this->session->restart();
-        return 'meatballs';
+        return 'pancakes';
     }
 }
 
