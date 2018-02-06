@@ -19,8 +19,9 @@ class MeatballsHandler extends AbstractRequestHandler {
         $id = $this->session->get('id');
         $this->username = $id;
         $controller =  $this->session->get(Constants::CONTR_KEY_NAME);
-        $controller->getComments($this->username, $select, $selectDelete);
+        $comments = $controller->getComments($this->username, $select, $selectDelete);
         $this->session->set(Constants::CONTR_KEY_NAME, $controller);
+        $this->addVariable('comment', $comments);
 
         return 'meatballs';
     }
